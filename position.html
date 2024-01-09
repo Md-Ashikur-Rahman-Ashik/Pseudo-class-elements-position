@@ -4,6 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Positions</title>
+    <style>
+        .swimContainer{
+            position: relative;
+            border: 2px solid peru;
+        }
+
+        .box{
+            border: 2px dotted plum;
+            width: 200px;
+        }
+
+        /* .ring{
+            position: relative;
+            left: 50px;
+            top: -30px;
+        } */
+
+        /* .ring{
+            position: absolute;
+            top: 40px;
+            left: 100px;
+        } */
+
+        .dummy{
+            border: 1px solid turquoise;
+            width: 200px;
+            height: 200px;
+        }
+
+        .ring{
+            position: sticky;
+            top: 0px;
+        }
+    </style>
 </head>
 <body>
     <h3>CSS Positions</h3>
@@ -11,15 +45,38 @@
         <!-- Flow Related -->
         <li>Static</li>
         <li>Relative</li>
-        <li>Absolute</li>
+        <li>Absolute: <small>Will lose it's own position and will move based on the root.</small></li>
         <!-- Scroll Related -->
         <li>Fixed</li>
         <li>Sticky</li>
     </ol>
     <div class="swimContainer">
         <div class="box boy"><img src="data:image/jpeg;base64,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" alt="Swim Boy"></div>
-        <div class="box ring"><img src="" alt=""></div>
-        <div class="box"><img src="" alt=""></div>
+        <div class="box ring"><img src="https://thumbs.dreamstime.com/b/pink-pool-ring-aqua-blue-water-94974596.jpg" alt="Swim Ring"></div>
+        <div class="box water"><img src="https://img.freepik.com/free-photo/fresh-water-texture-background-transparent-liquid_53876-142909.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704758400&semt=sph" alt="Water"></div>
+
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+    </div>
+    <div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
+        <div class="dummy"></div>
     </div>
 </body>
 </html>
